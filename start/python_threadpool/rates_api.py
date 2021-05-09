@@ -4,6 +4,9 @@ from typing import Any
 import csv
 import pathlib
 import math
+import logging
+from random import randint
+import time
 
 from flask import Flask, jsonify, abort, request
 
@@ -12,10 +15,21 @@ rates: list[dict[str, Any]] = []
 
 app = Flask(__name__)
 
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
+
+
+@app.route("/check")
+def check() -> Any:
+    """ health check endpoint """
+    return "READY"
+
 
 @app.route("/api/<rate_date>")
 def rates_by_date(rate_date: str) -> Any:
     """ rates by date endpoint """
+
+    time.sleep(randint(1, 5) * 0.055)
 
     for rate in rates:
 
@@ -66,7 +80,7 @@ def start_rates_api() -> None:
 
             rates.append(rate_entry)
 
-    app.run()
+    app.run(debug=False)
 
 
 if __name__ == "__main__":

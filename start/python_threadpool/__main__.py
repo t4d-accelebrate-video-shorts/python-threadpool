@@ -1,27 +1,28 @@
 """Main Module"""
 
-import multiprocessing as mp
 from datetime import datetime
 
-from python_threadpool.rates_api import start_rates_api
+from python_threadpool.rates_api_server import rates_api_server
 from python_threadpool.get_rates import get_rates, get_rates_threadpool
 
 
 def main() -> None:
     """Main Function"""
 
-    rates_api_process = mp.Process(target=start_rates_api)
-    rates_api_process.start()
+    with rates_api_server():
 
-    start_time = datetime.now()
+        print("processing rate requests")
 
-    num_rates_requested = get_rates()
-    # num_rates_requested = get_rates_threadpool()
+        start_time = datetime.now()
 
-    print(f"number of rates requested: {num_rates_requested}")
-    print(f"execution time: {datetime.now() - start_time} seconds")
+        rates = get_rates()
+        # rates = get_rates_threadpool()
 
-    rates_api_process.terminate()
+        print("Rates")
+        print("\n".join(rates))
+
+        print(f"\nnumber of rates requested: {len(rates)}")
+        print(f"execution time: {datetime.now() - start_time} seconds")
 
 
 if __name__ == '__main__':
