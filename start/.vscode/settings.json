@@ -13,11 +13,13 @@
     "python.linting.pylintArgs": [
         "--max-line-length=79",
         "--unsafe-load-any-extension=y",
-        "--ignore=.git,venv,.vscode,__pycache__"
+        "--ignore=.git,venv,.vscode,__pycache__",
+        "--disable=unused-import"
     ],
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Args": [
-        "--exclude=venv,.git,__pycache__"
+        "--exclude=venv,.git,__pycache__",
+        "--disable=F401"
     ],
     "python.linting.mypyEnabled": true,
     "python.linting.mypyArgs": [
