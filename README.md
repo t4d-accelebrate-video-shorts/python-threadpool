@@ -24,9 +24,11 @@ The provided files are the start and finish files for the video. If you desire t
 python -V
 ```
 
+> On some systems like macOS, you may need to run `python3` instead of `python`. This is because some systems have both Python 2 and 3 installed. So to run Python 3, the command `python3` must be used.
+
 If your system returns back a version number other than 3.95 or cannot find Python then you will need to install Python 3.9.5. To install using the system installer, please browse to the appropriate link below. The system installer only supports one version being installed on a system at a time.
 
-To download Node.js for:
+To download Python for:
 
 - 64-bit Windows: [python-3.9.5-amd64.exe](https://www.python.org/ftp/python/3.9.5/python-3.9.5-amd64.exe)
 - macOS: [python-3.9.5-macosx10.9.pkg](https://www.python.org/ftp/python/3.9.5/python-3.9.5-macosx10.9.pkg)
@@ -57,6 +59,22 @@ Extract the downloaded archive file in the folder of your choice.
 ```
 python -m venv venv
 ```
+
+**Step 5.** Active the virtual environment. From the same terminal window, within the `start` folder, run the command appropriate for your operating system:
+
+For Windows (PowerShell):
+
+```
+venv\Scripts\Activate.ps1
+```
+
+For macOS & Linux (Bash or Zsh):
+
+```
+source venv/bin/activate
+```
+
+For other operating systems or terminal shells, please visit this [web page](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment) for more information.
 
 **Step 5.** Install the PIP packages for the project. From a terminal window within the `start` folder run the following command:
 
