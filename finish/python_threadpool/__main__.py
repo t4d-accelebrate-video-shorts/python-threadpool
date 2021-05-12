@@ -15,8 +15,8 @@ def main() -> None:
 
         start_time = datetime.now()
 
-        rates = get_rates()
-        # rates = get_rates_threadpool()
+        # rates = get_rates()
+        rates = get_rates_threadpool()
 
         print("Rates")
         print("\n".join(rates))
