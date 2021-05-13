@@ -2,9 +2,9 @@
 
 ### Improve Python IO Performance with a Thread Pool
 
-[![YouTube Video](#)](#)
+[![YouTube Video](images/video-screenshot.png)](https://youtu.be/NjWNxsr58tA)
 
-This video short demonstation represents some of the content covered in the following React courses taught by [Accelebrate](https://www.accelebrate.com/):
+This demonstration represents some of the content covered in the following React courses taught by [Accelebrate](https://www.accelebrate.com/):
 
 - [Advanced Python](https://www.accelebrate.com/training/python-advanced)
 
@@ -83,7 +83,7 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-**Step 6.** Start watching the [YouTube Video](#) and code along to learn more about how to improve Python UI performance with a Thread Pool.
+**Step 6.** Start watching the [YouTube Video](https://youtu.be/NjWNxsr58tA) and code along to learn more about how to improve Python UI performance with a Thread Pool.
 
 
 
